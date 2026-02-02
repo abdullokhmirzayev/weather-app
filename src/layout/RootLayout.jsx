@@ -1,9 +1,15 @@
-
-import './Layout.css'
 import { NavLink, Outlet } from 'react-router-dom'
 import { CurrentWeather } from '../components/current-weather/current-weather'
+import './Layout.css'
 
-const RootLayout = ({ data, city, setCity, getData, selectedCity }) => {
+const RootLayout = ({
+	data,
+	city,
+	setCity,
+	getData,
+	selectedCity,
+	loading,
+}) => {
 	return (
 		<>
 			<header></header>
@@ -15,6 +21,7 @@ const RootLayout = ({ data, city, setCity, getData, selectedCity }) => {
 						setCity={setCity}
 						getData={getData}
 						selectedCity={selectedCity}
+						loading={loading}
 					/>
 
 					<div className='details-section'>
@@ -23,7 +30,6 @@ const RootLayout = ({ data, city, setCity, getData, selectedCity }) => {
 							<NavLink to={'/tomorrow'}>Tomarrow</NavLink>
 						</nav>
 						<Outlet />
-
 					</div>
 				</div>
 			</main>

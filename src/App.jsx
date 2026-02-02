@@ -11,12 +11,20 @@ function App() {
 	const [city, setCity] = useState('Toshkent')
 	const [data, setData] = useState(null)
 	const [selectedCity, setSelectedCity] = useState(city)
+	const [loading, setLoading] = useState(false)
 
 	const getData = async () => {
-		const data = await getWeather({ city })
-		setData(data)
-		setSelectedCity(city)
-		return data
+		setLoading(true)
+		try {
+			const data = await getWeather({ city })
+			setData(data)
+			setSelectedCity(city)
+			return data
+		} catch (error) {
+			console.error('Error', error)
+		} finally {
+			setLoading(false)
+		}
 	}
 
 	useEffect(() => {
@@ -27,13 +35,12 @@ function App() {
 		return <Loader />
 	}
 
-
-
 	const route = createBrowserRouter([
 		{
 			path: '/',
 			element: (
 				<RootLayout
+					loading={loading}
 					data={data}
 					city={city}
 					setCity={setCity}

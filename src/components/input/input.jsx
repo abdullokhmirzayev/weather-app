@@ -1,7 +1,7 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/16/solid'
 import './input.css'
 
-export const Input = ({ city, setCity, getData }) => {
+export const Input = ({ city, setCity, getData, loading }) => {
 	const handleKeyDown = event => {
 		if (event.key === 'Enter') {
 			getData()
@@ -12,7 +12,7 @@ export const Input = ({ city, setCity, getData }) => {
 		<div className='input-wrapper'>
 			<input
 				type='text'
-				placeholder='Search city...'
+				placeholder='Search City...'
 				className='custom-input'
 				value={city}
 				onChange={event => {
@@ -20,14 +20,18 @@ export const Input = ({ city, setCity, getData }) => {
 				}}
 				onKeyDown={handleKeyDown}
 			/>
-
-			<MagnifyingGlassIcon
-				onClick={() => getData()}
-				width={32}
-				height={32}
-				className='custom-input__icon'
-				title='Search any city'
-			/>
+			<button disabled={loading} onClick={getData}>
+				{loading ? (
+					<span class='loader-btn'></span>
+				) : (
+					<MagnifyingGlassIcon
+						width={32}
+						height={32}
+						className='custom-input__icon'
+						title='Search any city'
+					/>
+				)}
+			</button>
 		</div>
 	)
 }

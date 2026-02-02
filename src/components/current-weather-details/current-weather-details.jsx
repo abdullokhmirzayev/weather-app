@@ -12,8 +12,24 @@ export const CurrentWeatherDetails = ({ data }) => {
 					value={`${data?.main?.feels_like}°C`}
 				/>
 				<CurrentWeatherDetailsCard
+					type={'Temp Max'}
+					value={`${Math.round(data?.main.temp_max)}°C`}
+				/>
+				<CurrentWeatherDetailsCard
+					type={'Temp Min'}
+					value={`${Math.round(data?.main.temp_min)}°C`}
+				/>
+				<CurrentWeatherDetailsCard
 					type={'Humidity'}
 					value={`${data?.main.humidity}%`}
+				/>
+				<CurrentWeatherDetailsCard
+					type={'Clouds'}
+					value={`${data?.clouds.all}%`}
+				/>
+				<CurrentWeatherDetailsCard
+					type={'Wind'}
+					value={`${Math.round(data?.wind.speed)}km/h`}
 				/>
 				<CurrentWeatherDetailsCard
 					type={'Pressure'}
@@ -26,22 +42,6 @@ export const CurrentWeatherDetails = ({ data }) => {
 				<CurrentWeatherDetailsCard
 					type={'Grnd Level'}
 					value={`${data?.main.grnd_level}hPa`}
-				/>
-				<CurrentWeatherDetailsCard
-					type={'Clouds'}
-					value={`${data?.clouds.all}%`}
-				/>
-				<CurrentWeatherDetailsCard
-					type={'Wind'}
-					value={`${Math.round(data?.wind.speed)} km/h`}
-				/>
-				<CurrentWeatherDetailsCard
-					type={'Temp Max'}
-					value={`${Math.round(data?.main.temp_max)} km/h`}
-				/>
-				<CurrentWeatherDetailsCard
-					type={'Temp Min'}
-					value={`${Math.round(data?.main.temp_min)} km/h`}
 				/>
 			</div>
 		</div>

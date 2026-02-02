@@ -8,9 +8,9 @@ export const CurrentWeather = ({
 	setCity,
 	getData,
 	selectedCity,
+	loading,
 }) => {
 	const location = useLocation()
-
 
 	const displayData =
 		location.pathname === '/tomorrow' ? data.tomarrowData : data.currentData
@@ -18,7 +18,7 @@ export const CurrentWeather = ({
 	return (
 		<>
 			<div className='current-weather'>
-				<Input city={city} setCity={setCity} getData={getData} />
+				<Input city={city} setCity={setCity} getData={getData} loading={loading} />
 
 				<img
 					src={`https://openweathermap.org/img/wn/${displayData?.weather[0].icon}@2x.png`}

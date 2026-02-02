@@ -1,24 +1,54 @@
 .custom-input {
-  background-color: transparent;
-  width: 100%;
-  border: none;
+	background-color: transparent;
+	width: 100%;
+	border: none;
 }
 
 .custom-input:focus-visible {
-  outline: none;
+	outline: none;
 }
 
 .input-wrapper {
-  display: flex;
-  align-items: center;
-  background-color: #dddddd;
-  border-radius: 20px;
-  padding: 8px 12px;
+	display: flex;
+	align-items: center;
+	background-color: #dddddd;
+	border-radius: 20px;
+	padding: 8px 12px;
 }
 
 .custom-input__icon {
-  color: #dddddd;
-  cursor: pointer;
-  border-radius: 8px;
-  background-color: #748cf2;
+	color: #dddddd;
+	cursor: pointer;
+	border-radius: 8px;
+	background-color: #748cf2;
+}
+
+.input-wrapper button {
+	border: none;
+	background: transparent;
+}
+
+.input-wrapper .loading {
+	/* font-size: 16px; */
+	padding: 8px;
+}
+
+.loader-btn {
+	width: 32px;
+	height: 32px;
+	border: 5px solid #748cf2;
+	border-bottom-color: transparent;
+	border-radius: 50%;
+	display: inline-block;
+	box-sizing: border-box;
+	animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }

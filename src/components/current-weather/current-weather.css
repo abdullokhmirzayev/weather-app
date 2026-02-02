@@ -1,45 +1,46 @@
 .current-weather {
-  background-color: white;
-  padding: 32px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+	background-color: white;
+	padding: 32px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 .current-weather-icon {
-  width: 256px;
-  height: 256px;
-  margin: 0 auto;
-  display: block;
-  margin-top: 100px;
+	width: 256px;
+	height: 256px;
+	margin: 0 auto;
+	display: block;
+	margin-top: 100px;
 }
 
 .current-weather__temp {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .temp__num {
-  font-size: 70px;
+	font-size: 70px;
 }
 
 .temp__c {
-  font-size: 50px;
-  align-self: start;
+	font-size: 50px;
+	align-self: start;
 }
 
 .current-weather__status,
 .current-weather__city {
-  font-size: 32px;
-  text-align: center;
+	font-size: 32px;
+	text-align: center;
+	text-transform: capitalize;
 }
 
 .devider {
-  width: 80%;
-  height: 8px;
-  background-color: #dddddd;
-  border-radius: 32px;
-  align-self: center;
-  margin: 32px 0;
+	width: 80%;
+	height: 8px;
+	background-color: #dddddd;
+	border-radius: 32px;
+	align-self: center;
+	margin: 32px 0;
 }
