@@ -1,0 +1,24 @@
+.custom-input {
+  background-color: transparent;
+  width: 100%;
+  border: none;
+}
+
+.custom-input:focus-visible {
+  outline: none;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #dddddd;
+  border-radius: 20px;
+  padding: 8px 12px;
+}
+
+.custom-input__icon {
+  color: #dddddd;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: #748cf2;
+}

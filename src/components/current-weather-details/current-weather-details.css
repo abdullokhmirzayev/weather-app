@@ -1,0 +1,7 @@
+.current-weather__details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 16px;
+  align-items: center;
+  gap: 16px;
+}
