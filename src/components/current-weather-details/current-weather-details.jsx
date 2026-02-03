@@ -2,8 +2,6 @@ import { CurrentWeatherDetailsCard } from './current-weather-details-card/curren
 import './current-weather-details.css'
 
 export const CurrentWeatherDetails = ({ data }) => {
-	console.log(data)
-
 	return (
 		<div>
 			<div className='current-weather__details'>

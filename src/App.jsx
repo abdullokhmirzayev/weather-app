@@ -1,35 +1,13 @@
-import { useEffect, useState } from 'react'
-import { getWeather } from './api/getWeather'
 import './App.css'
 import { CurrentWeatherDetails } from './components/current-weather-details/current-weather-details'
 import Loader from './components/loader/loader'
 import RootLayout from './layout/RootLayout'
 
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
+import { useWeather } from './context/weather-context'
 
 function App() {
-	const [city, setCity] = useState('Toshkent')
-	const [data, setData] = useState(null)
-	const [selectedCity, setSelectedCity] = useState(city)
-	const [loading, setLoading] = useState(false)
-
-	const getData = async () => {
-		setLoading(true)
-		try {
-			const data = await getWeather({ city })
-			setData(data)
-			setSelectedCity(city)
-			return data
-		} catch (error) {
-			console.error('Error', error)
-		} finally {
-			setLoading(false)
-		}
-	}
-
-	useEffect(() => {
-		getData()
-	}, [])
+	const { data } = useWeather()
 
 	if (!data) {
 		return <Loader />
@@ -38,16 +16,7 @@ function App() {
 	const route = createBrowserRouter([
 		{
 			path: '/',
-			element: (
-				<RootLayout
-					loading={loading}
-					data={data}
-					city={city}
-					setCity={setCity}
-					getData={getData}
-					selectedCity={selectedCity}
-				/>
-			),
+			element: <RootLayout />,
 			children: [
 				{
 					index: true,

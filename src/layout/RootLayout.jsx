@@ -2,27 +2,13 @@ import { NavLink, Outlet } from 'react-router-dom'
 import { CurrentWeather } from '../components/current-weather/current-weather'
 import './Layout.css'
 
-const RootLayout = ({
-	data,
-	city,
-	setCity,
-	getData,
-	selectedCity,
-	loading,
-}) => {
+const RootLayout = () => {
 	return (
 		<>
 			<header></header>
 			<main>
 				<div className='container main'>
-					<CurrentWeather
-						data={data}
-						city={city}
-						setCity={setCity}
-						getData={getData}
-						selectedCity={selectedCity}
-						loading={loading}
-					/>
+					<CurrentWeather />
 
 					<div className='details-section'>
 						<nav>

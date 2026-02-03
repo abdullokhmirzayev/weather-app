@@ -1,16 +1,11 @@
 import { useLocation } from 'react-router-dom'
+import { useWeather } from '../../context/weather-context'
 import { Input } from '../input/input'
 import './current-weather.css'
 
-export const CurrentWeather = ({
-	data,
-	city,
-	setCity,
-	getData,
-	selectedCity,
-	loading,
-}) => {
+export const CurrentWeather = () => {
 	const location = useLocation()
+	const { data, selectedCity } = useWeather()
 
 	const displayData =
 		location.pathname === '/tomorrow' ? data.tomarrowData : data.currentData
@@ -18,7 +13,7 @@ export const CurrentWeather = ({
 	return (
 		<>
 			<div className='current-weather'>
-				<Input city={city} setCity={setCity} getData={getData} loading={loading} />
+				<Input/>
 
 				<img
 					src={`https://openweathermap.org/img/wn/${displayData?.weather[0].icon}@2x.png`}

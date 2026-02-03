@@ -1,12 +1,15 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/16/solid'
+import { useWeather } from '../../context/weather-context'
 import './input.css'
 
-export const Input = ({ city, setCity, getData, loading }) => {
+export const Input = () => {
+	const {city, setCity, getData, loading} = useWeather()
 	const handleKeyDown = event => {
 		if (event.key === 'Enter') {
 			getData()
 		}
 	}
+
 
 	return (
 		<div className='input-wrapper'>
